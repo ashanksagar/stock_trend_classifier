@@ -1,0 +1,11 @@
+# Ignore model artifacts
+models/
+data/
+
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+
+# Ignore virtual environments
+venv/
+
