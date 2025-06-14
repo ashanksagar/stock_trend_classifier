@@ -1,5 +1,4 @@
-# Ignore model artifacts
-models/
+# Ignore stock data csv files
 data/
 
 # Ignore Python cache and compiled files
