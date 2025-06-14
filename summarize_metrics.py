@@ -37,4 +37,4 @@ for ticker in tickers:
 summary_df = pd.DataFrame(summary)
 summary_df = summary_df.sort_values("Sharpe Ratio", ascending=False)
 summary_df.to_csv("models/summary_metrics.csv", index=False)
-print("✅ Summary saved to models/summary_metrics.csv")
+print("Summary saved to models/summary_metrics.csv")
