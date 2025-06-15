@@ -1,0 +1,35 @@
+name: Daily Model Retrain
+
+on:
+  schedule:
+    - cron: '15 21 * * *' 
+  workflow_dispatch:  
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.13'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run daily retrain
+      run: python daily_retrain.py
+
+    - name: Commit and push new models
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add models/* data/*
+        git commit -m "Daily retrain: update models and data"
+        git push
