@@ -23,7 +23,7 @@ st.markdown("""
 
 st.title("Stock Price Trend Classifier (S&P 500 Top 50)")
 st.markdown("""
- By: Ashank Sagar | Updated June 2025
+ By: Ashank Sagar | Updates Daily
 <div style='margin-bottom: 30px;'></div>
 """, unsafe_allow_html=True)
 st.markdown("Predict whether a stock will go **Up or Down** tomorrow based on historical trends. This app uses machine")
