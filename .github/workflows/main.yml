@@ -26,7 +26,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run daily retrain
-        run: python src/daily_retrain.py
+        run: |
+          export PYTHONPATH=.
+          python src/daily_retrain.py
 
       - name: Commit and push new models
         run: |
