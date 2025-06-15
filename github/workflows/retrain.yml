@@ -2,7 +2,7 @@ name: Daily Model Retrain
 
 on:
   schedule:
-    - cron: '16 21 * * *' 
+    - cron: '11 21 * * *' 
   workflow_dispatch:  
 
 jobs:
@@ -30,6 +30,6 @@ jobs:
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        git add models/*.pkl data/*.csv
+        git add models/* data/*
         git commit -m "Daily retrain: update models and data"
         git push
