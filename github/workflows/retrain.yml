@@ -2,7 +2,7 @@ name: Daily Model Retrain
 
 on:
   schedule:
-    - cron: '0 12 * * *'  # Runs daily at 4am PT, 7am ET
+    - cron: '16 21 * * *' 
   workflow_dispatch:  
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: '3.13'
 
     - name: Install dependencies
       run: |
