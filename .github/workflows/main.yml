@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '23 21 * * *'  # 2:23 PM PST
   workflow_dispatch:
+  
+permissions:
+  contents: write 
 
 jobs:
   retrain:
