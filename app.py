@@ -46,7 +46,7 @@ with left_col:
 
     if st.button("Run Prediction"):
         try:
-            with st.spinner("📱 Fetching and processing data..."):
+            with st.spinner("Fetching and processing data..."):
                 loader = StockDataLoader(ticker, str(start_date), str(end_date))
                 if end_date > datetime.today().date():
                     st.warning("End date cannot be in the future. Resetting to today's date.")
