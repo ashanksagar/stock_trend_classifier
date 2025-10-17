@@ -11,10 +11,8 @@ class StockDataLoader:
         self.data = None
 
     def _flatten_and_clean_columns(self, df):
-        # Flatten MultiIndex columns (yfinance returns these sometimes)
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = ['_'.join(filter(None, map(str, col))).strip() for col in df.columns]
-        # Remove ticker suffixes like
         df.columns = [col.replace(f"_{self.ticker}", "") for col in df.columns]
         return df
 
